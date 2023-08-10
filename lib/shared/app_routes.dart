@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:cashir/modules/dashboard/view/dashboard.screen.dart';
 import 'package:cashir/modules/home/view/home.screen.dart';
 import 'package:cashir/modules/splash/view/splash.screen.dart';
 import 'package:get/get.dart';
@@ -25,5 +26,9 @@ List<GetPage> appRoutes = [
   GetPage(
     name: '/home',
     page: () => const HomeScreen(),
+  ),
+  GetPage(
+    name: '/dashboard',
+    page: () => const DashboardScreen(),
   ),
 ];
