@@ -49,7 +49,7 @@ class LoginScreen extends StatelessWidget {
     }
 
     // login success, redirect to home screen
-    Get.offNamed('/home');
+    Get.offNamed('/dashboard');
   }
 
   @override
