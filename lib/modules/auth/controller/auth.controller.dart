@@ -11,18 +11,31 @@ class AuthController extends GetxController {
 
   final Rx<AuthStatus> authStatus = const AuthStatus(isLoggedIn: false).obs;
 
+  /// TODO: send request to server
+  /// TODO: create new AuthStatus from response
+  /// TODO: save new AuthStatus to local storage
   Future<AuthStatus> login({required LoginRequest body}) async {
     authStatus.value = const AuthStatus(isLoggedIn: true, token: 'dommy token');
 
     return authStatus.value;
   }
 
-  Future<void> register({required RegisterRequest body}) async {
+  /// TODO: send request to server
+  /// TODO: create new AuthStatus from response
+  /// TODO: save new AuthStatus to local storage
+  Future<AuthStatus> register({required RegisterRequest body}) async {
     authStatus.value = const AuthStatus(isLoggedIn: true, token: 'dommy token');
+
+    return authStatus.value;
   }
 
-  Future<void> logout() async {
+  /// TODO: send request to server
+  /// TODO: create new AuthStatus from response
+  /// TODO: save new AuthStatus to local storage
+  Future<AuthStatus> logout() async {
     authStatus.value = const AuthStatus(isLoggedIn: false, token: null);
+
+    return authStatus.value;
   }
 
   @override
