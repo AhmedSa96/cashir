@@ -26,14 +26,6 @@ class _SplashScreenState extends State<SplashScreen> {
       _visible.value = !_visible.value;
     });
 
-    /// Navigate to login screen after 3 seconds
-    /// TODO: Check if user is logged in
-    /// TODO: Navigate to home screen if user is logged in
-    /// TODO: Navigate to login screen if user is not logged in
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.offNamed('/login');
-    });
-
     super.initState();
   }
 
