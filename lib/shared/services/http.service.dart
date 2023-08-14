@@ -1,13 +1,15 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class HttpService {
-  static const _baseUrl = 'https://api.cashir.app';
+  static const _baseUrl = '';
   static const _defaultHeaders = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
   };
 
-  get({
+  Future<http.Response> get({
     required String url,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
@@ -18,7 +20,7 @@ class HttpService {
     });
   }
 
-  post({
+  Future<http.Response> post({
     required String url,
     required Map<String, dynamic> body,
     Map<String, String> headers = const {},
@@ -30,11 +32,11 @@ class HttpService {
         ..._defaultHeaders,
         ...headers,
       },
-      body: body,
+      body: jsonEncode(body),
     );
   }
 
-  put({
+  Future<http.Response> put({
     required String url,
     required Map<String, dynamic> body,
     Map<String, String> headers = const {},
@@ -46,11 +48,11 @@ class HttpService {
         ..._defaultHeaders,
         ...headers,
       },
-      body: body,
+      body: jsonEncode(body),
     );
   }
 
-  delete({
+  Future<http.Response> delete({
     required String url,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
