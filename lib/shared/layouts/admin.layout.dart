@@ -27,37 +27,43 @@ class AdminLayout extends StatelessWidget {
             ListTile(
               title: Text("Dashboard".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/admin/dashboard');
+                Get.toNamed('/admin/dashboard');
               },
             ),
             ListTile(
               title: Text("Constatns".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/admin/constatns');
+                Get.toNamed('/admin/constants');
               },
             ),
             ListTile(
               title: Text("Orders".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/admin/orders');
+                Get.toNamed('/admin/orders');
               },
             ),
             ListTile(
               title: Text("Purcheses".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/admin/purcheses');
+                Get.toNamed('/admin/purcheses');
               },
             ),
             ListTile(
               title: Text("emolpyees".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/admin/employees');
+                Get.toNamed('/admin/employees');
+              },
+            ),
+            ListTile(
+              title: Text("Reports".tr),
+              onTap: () {
+                Get.toNamed('/admin/reports');
               },
             ),
             ListTile(
               title: Text("Logout".tr),
               onTap: () {
-                Navigator.of(context).pushNamed('/auth/login');
+                Get.offAllNamed('/login');
               },
             ),
           ],
