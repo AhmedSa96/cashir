@@ -64,7 +64,7 @@ class RegisterScreen extends StatelessWidget {
     }
 
     // register success, redirect to home screen
-    Get.offNamed('/dashboard');
+    Get.offNamed('/admin/dashboard');
   }
 
   @override
@@ -148,7 +148,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.offNamed('/dashboard');
+                      Get.offNamed('/admin/dashboard');
                     },
                     child: Text("if you already have an account, login".tr),
                   ),
