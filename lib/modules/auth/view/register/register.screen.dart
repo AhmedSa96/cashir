@@ -41,7 +41,8 @@ class RegisterScreen extends StatelessWidget {
   /// first check if form is valid, if not show error message
   /// if form is valid, call register method from auth controller
   /// if register failed, show error message
-  /// if register success, redirect to login screen
+  /// if register success, redirect to dashboard screen
+  /// this method will change the AuthStatus in auth controller if everything is ok
   void register() async {
     final toastr = Get.find<ToastrService>();
 
@@ -52,18 +53,18 @@ class RegisterScreen extends StatelessWidget {
       return;
     }
 
-    // login and get new auth status
+    // register and get new auth status
     final body = RegisterRequest.fromJson(form.value);
     final newAuthStatus = await Get.find<AuthController>().register(body: body);
 
-    // check if login failed, show error message
+    // check if register failed, show error message
     if (!newAuthStatus.isLoggedIn) {
       toastr.error("invalid credentials".tr);
       return;
     }
 
-    // login success, redirect to home screen
-    Get.offNamed('/login');
+    // register success, redirect to home screen
+    Get.offNamed('/dashboard');
   }
 
   @override
@@ -120,7 +121,6 @@ class RegisterScreen extends StatelessWidget {
                       formControlName: "phone",
                     ),
                   ),
-                  // TODO: add date picker
                   Wrapper(
                     child: DateInput(
                       title: "Birth Date".tr,
@@ -148,7 +148,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.offNamed('/login');
+                      Get.offNamed('/dashboard');
                     },
                     child: Text("if you already have an account, login".tr),
                   ),
