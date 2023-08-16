@@ -5,6 +5,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../../../shared/services/toastr.service.dart';
 import '../../../../shared/widgets/common/wrapper.widget.dart';
+import '../../../../shared/widgets/forms/date_input.widget.dart';
 import '../../../../shared/widgets/forms/text_input.widget.dart';
 import '../../controller/auth.controller.dart';
 import 'package:cashir/shared/constants/colors.dart' as colors;
@@ -121,7 +122,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   // TODO: add date picker
                   Wrapper(
-                    child: TextInput(
+                    child: DateInput(
                       title: "Birth Date".tr,
                       formControlName: "birthDate",
                     ),
