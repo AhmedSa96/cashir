@@ -11,8 +11,10 @@ _$_RegisterRequest _$$_RegisterRequestFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       password: json['password'] as String,
       name: json['name'] as String,
-      phone: json['phone'] as String,
-      birthDate: DateTime.parse(json['birthDate'] as String),
+      phone: json['phone'] as String?,
+      birthDate: json['birthDate'] == null
+          ? null
+          : DateTime.parse(json['birthDate'] as String),
     );
 
 Map<String, dynamic> _$$_RegisterRequestToJson(_$_RegisterRequest instance) =>
@@ -21,5 +23,5 @@ Map<String, dynamic> _$$_RegisterRequestToJson(_$_RegisterRequest instance) =>
       'password': instance.password,
       'name': instance.name,
       'phone': instance.phone,
-      'birthDate': instance.birthDate.toIso8601String(),
+      'birthDate': instance.birthDate?.toIso8601String(),
     };

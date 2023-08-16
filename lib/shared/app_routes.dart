@@ -21,7 +21,7 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: '/register',
-    page: () => const RegisterScreen(),
+    page: () => RegisterScreen(),
   ),
   GetPage(
     name: '/home',

@@ -23,8 +23,8 @@ mixin _$RegisterRequest {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
-  DateTime get birthDate => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
+  DateTime? get birthDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,8 +42,8 @@ abstract class $RegisterRequestCopyWith<$Res> {
       {String email,
       String password,
       String name,
-      String phone,
-      DateTime birthDate});
+      String? phone,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -62,8 +62,8 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
     Object? email = null,
     Object? password = null,
     Object? name = null,
-    Object? phone = null,
-    Object? birthDate = null,
+    Object? phone = freezed,
+    Object? birthDate = freezed,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -78,14 +78,14 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthDate: null == birthDate
+              as String?,
+      birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -102,8 +102,8 @@ abstract class _$$_RegisterRequestCopyWith<$Res>
       {String email,
       String password,
       String name,
-      String phone,
-      DateTime birthDate});
+      String? phone,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -120,8 +120,8 @@ class __$$_RegisterRequestCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? name = null,
-    Object? phone = null,
-    Object? birthDate = null,
+    Object? phone = freezed,
+    Object? birthDate = freezed,
   }) {
     return _then(_$_RegisterRequest(
       email: null == email
@@ -136,14 +136,14 @@ class __$$_RegisterRequestCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthDate: null == birthDate
+              as String?,
+      birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -168,9 +168,9 @@ class _$_RegisterRequest implements _RegisterRequest {
   @override
   final String name;
   @override
-  final String phone;
+  final String? phone;
   @override
-  final DateTime birthDate;
+  final DateTime? birthDate;
 
   @override
   String toString() {
@@ -215,8 +215,8 @@ abstract class _RegisterRequest implements RegisterRequest {
       {required final String email,
       required final String password,
       required final String name,
-      required final String phone,
-      required final DateTime birthDate}) = _$_RegisterRequest;
+      required final String? phone,
+      required final DateTime? birthDate}) = _$_RegisterRequest;
 
   factory _RegisterRequest.fromJson(Map<String, dynamic> json) =
       _$_RegisterRequest.fromJson;
@@ -228,9 +228,9 @@ abstract class _RegisterRequest implements RegisterRequest {
   @override
   String get name;
   @override
-  String get phone;
+  String? get phone;
   @override
-  DateTime get birthDate;
+  DateTime? get birthDate;
   @override
   @JsonKey(ignore: true)
   _$$_RegisterRequestCopyWith<_$_RegisterRequest> get copyWith =>
