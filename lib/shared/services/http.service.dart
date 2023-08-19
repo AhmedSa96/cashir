@@ -2,6 +2,16 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+class AppResponse<T> {
+  final int statusCode;
+  final T data;
+
+  AppResponse({
+    required this.statusCode,
+    required this.data,
+  });
+}
+
 class HttpService {
   static const _baseUrl = '';
   static const _defaultHeaders = {
@@ -9,24 +19,29 @@ class HttpService {
     'Accept': 'application/json',
   };
 
-  Future<http.Response> get({
+  Future<AppResponse<T>> get<T>({
     required String url,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
   }) async {
-    return await http.get(_buildUrl(url, query), headers: {
+    final res = await http.get(_buildUrl(url, query), headers: {
       ..._defaultHeaders,
       ...headers,
     });
+
+    return AppResponse(
+      statusCode: res.statusCode,
+      data: jsonDecode(res.body),
+    );
   }
 
-  Future<http.Response> post({
+  Future<AppResponse<T>> post<T>({
     required String url,
     required Map<String, dynamic> body,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
   }) async {
-    return await http.post(
+    final res = await http.post(
       _buildUrl(url, query),
       headers: {
         ..._defaultHeaders,
@@ -34,15 +49,20 @@ class HttpService {
       },
       body: jsonEncode(body),
     );
+
+    return AppResponse(
+      statusCode: res.statusCode,
+      data: jsonDecode(res.body),
+    );
   }
 
-  Future<http.Response> put({
+  Future<AppResponse<T>> put<T>({
     required String url,
     required Map<String, dynamic> body,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
   }) async {
-    return await http.put(
+    final res = await http.put(
       _buildUrl(url, query),
       headers: {
         ..._defaultHeaders,
@@ -50,17 +70,27 @@ class HttpService {
       },
       body: jsonEncode(body),
     );
+
+    return AppResponse(
+      statusCode: res.statusCode,
+      data: jsonDecode(res.body),
+    );
   }
 
-  Future<http.Response> delete({
+  Future<AppResponse<T>> delete<T>({
     required String url,
     Map<String, String> headers = const {},
     Map<String, dynamic> query = const {},
   }) async {
-    return await http.delete(_buildUrl(url, query), headers: {
+    final res = await http.delete(_buildUrl(url, query), headers: {
       ..._defaultHeaders,
       ...headers,
     });
+
+    return AppResponse(
+      statusCode: res.statusCode,
+      data: jsonDecode(res.body),
+    );
   }
 
   Uri _buildUrl(String url, Map<String, dynamic> query) {

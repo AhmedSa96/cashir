@@ -6,10 +6,12 @@ import 'package:cashir/shared/constants/colors.dart' as colors;
 class AdminLayout extends StatelessWidget {
   final String title;
   final Widget child;
+  final Widget? floatingActionButton;
 
   const AdminLayout({
     required this.title,
     required this.child,
+    this.floatingActionButton,
     super.key,
   });
 
@@ -17,9 +19,11 @@ class AdminLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shadowColor: Colors.white,
         title: Text(title),
       ),
       body: child,
+      floatingActionButton: floatingActionButton,
       drawer: const _MainMenu(),
     );
   }

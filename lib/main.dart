@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       // theme config
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: colors.primary),
-        useMaterial3: true,
+        // useMaterial3: true,
       ),
       // routes config
       initialRoute: DEFAULT_ROUTE,

@@ -3,6 +3,8 @@
 import 'package:cashir/modules/dashboard/view/dashboard.screen.dart';
 import 'package:cashir/modules/employees/views/employees.screen.dart';
 import 'package:cashir/modules/orders/views/orders.screen.dart';
+import 'package:cashir/modules/products/views/create_product.screen.dart';
+import 'package:cashir/modules/products/views/product.screen.dart';
 import 'package:cashir/modules/purcheses/views/purcheses.screen.dart';
 import 'package:cashir/modules/reports/views/reports.screen.dart';
 import 'package:cashir/modules/splash/view/splash.screen.dart';
@@ -36,6 +38,17 @@ List<GetPage> appRoutes = [
     name: '/admin/dashboard',
     page: () => const DashboardScreen(),
   ),
+
+  // products routes
+  GetPage(
+    name: '/admin/products',
+    page: () => const ProductsScreen(),
+  ),
+  GetPage(
+    name: '/admin/products/create',
+    page: () => const CreateProductScreen(),
+  ),
+
   GetPage(
     name: '/admin/orders',
     page: () => const OrdersScreen(),
