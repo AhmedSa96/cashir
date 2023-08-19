@@ -32,6 +32,7 @@ class FetchProductsController extends GetxController {
     // stop loading state
     _load(false);
 
+    // handle the response
     return _handleResponse(response);
   }
 
@@ -39,7 +40,7 @@ class FetchProductsController extends GetxController {
   /// and return true if the request is success,
   /// otherwise it will return false,
   /// this method will also cache the response mapped to [products]
-  bool _handleResponse(response) {
+  bool _handleResponse(AppResponse<List<Map<String, dynamic>>> response) {
     // check if the request is failed
     if (response.statusCode != 200) return false;
 
