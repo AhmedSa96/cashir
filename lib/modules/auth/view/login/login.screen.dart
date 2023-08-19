@@ -12,9 +12,11 @@ import 'package:cashir/shared/constants/colors.dart' as colors;
 class LoginScreen extends StatelessWidget {
   final form = FormGroup({
     'email': FormControl<String>(
+      value: "test@test.com",
       validators: [Validators.required, Validators.email],
     ),
     'password': FormControl<String>(
+      value: "123456",
       validators: [Validators.required],
     ),
   });
