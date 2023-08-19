@@ -18,3 +18,8 @@ const Color info = Color(0xFF2979FF);
 
 // toast messages text colors
 const Color toastText = Color(0xFFFFFFFF);
+
+// button colors
+const Color buttonPrimary = Color(0xFF1e90ff);
+const Color buttonDanger = Color(0xFFff4757);
+const Color buttonSecondary = Color(0xFFff8c00);

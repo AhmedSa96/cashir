@@ -20,6 +20,7 @@ class AdminLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         shadowColor: Colors.white,
+        backgroundColor: colors.primary,
         title: Text(title),
       ),
       body: child,

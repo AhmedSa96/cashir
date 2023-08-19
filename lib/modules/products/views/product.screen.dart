@@ -2,6 +2,8 @@ import 'package:cashir/shared/layouts/admin.layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../shared/constants/colors.dart' as colors;
+
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({super.key});
 
@@ -10,6 +12,7 @@ class ProductsScreen extends StatelessWidget {
     return AdminLayout(
       title: "Products".tr,
       floatingActionButton: FloatingActionButton(
+        backgroundColor: colors.primary,
         child: const Icon(Icons.add),
         onPressed: () {
           Get.toNamed('/admin/products/create');
@@ -20,11 +23,20 @@ class ProductsScreen extends StatelessWidget {
             return ListTile(
               title: Text("Product $index"),
               subtitle: Text("Product $index description"),
-              trailing: IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () {
-                  Get.toNamed('/admin/products/$index/edit');
-                },
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.delete, color: colors.buttonDanger),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.edit, color: colors.buttonPrimary),
+                    onPressed: () {
+                      Get.toNamed('/admin/products/$index/edit');
+                    },
+                  ),
+                ],
               ),
             );
           },
