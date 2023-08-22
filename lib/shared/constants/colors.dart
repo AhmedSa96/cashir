@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 // app colors
 //? green, maybe need to change
-const Color primary = Color(0xFF2ED573);
-const Color primaryVariant = Color(0xFF1B9C57);
+const Color primary = Color(0xFF1E429F);
+const Color primaryVariant = Color(0xFF1C64F2);
 // todo: change this color
-const Color secondary = Color(0xFF5352ED);
-const Color secondaryVariant = Color(0xFF3B3F8C);
+const Color secondary = Color(0xFFE3A008);
+const Color secondaryVariant = Color(0xFFFACA15);
 //? is this color good, or should be lighter?
 const Color background = Color(0xFFF1F2F6);
 
