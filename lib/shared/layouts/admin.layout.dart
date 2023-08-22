@@ -19,8 +19,9 @@ class AdminLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shadowColor: Colors.white,
-        backgroundColor: colors.primary,
+        // shadowColor: Colors.white,
+        // backgroundColor: colors.primary,
+        foregroundColor: colors.primary,
         title: Text(title),
       ),
       body: child,
@@ -61,20 +62,6 @@ class _MainMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Orders".tr),
-            leading: const Icon(Icons.shopping_cart, color: colors.primary),
-            onTap: () {
-              Get.toNamed('/admin/orders');
-            },
-          ),
-          ListTile(
-            title: Text("Purcheses".tr),
-            leading: const Icon(Icons.shopping_basket, color: colors.primary),
-            onTap: () {
-              Get.toNamed('/admin/purcheses');
-            },
-          ),
-          ListTile(
             title: Text("Clients".tr),
             leading: const Icon(Icons.person, color: colors.primary),
             onTap: () {
@@ -86,6 +73,20 @@ class _MainMenu extends StatelessWidget {
             leading: const Icon(Icons.person, color: colors.primary),
             onTap: () {
               Get.toNamed('/admin/suppliers');
+            },
+          ),
+          ListTile(
+            title: Text("Orders".tr),
+            leading: const Icon(Icons.shopping_cart, color: colors.primary),
+            onTap: () {
+              Get.toNamed('/admin/orders');
+            },
+          ),
+          ListTile(
+            title: Text("Purcheses".tr),
+            leading: const Icon(Icons.shopping_basket, color: colors.primary),
+            onTap: () {
+              Get.toNamed('/admin/purcheses');
             },
           ),
           ListTile(
