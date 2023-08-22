@@ -6,11 +6,15 @@ class TextInput extends StatelessWidget {
   final String formControlName;
   final bool isSecure;
 
-  const TextInput(
-      {required this.title,
-      required this.formControlName,
-      this.isSecure = false,
-      super.key});
+  final TextInputType? keyboardType;
+
+  const TextInput({
+    required this.title,
+    required this.formControlName,
+    this.isSecure = false,
+    this.keyboardType,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,7 @@ class TextInput extends StatelessWidget {
         const SizedBox(height: 8),
         ReactiveTextField(
           formControlName: formControlName,
+          keyboardType: keyboardType,
           obscureText: isSecure,
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
