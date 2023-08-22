@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:cashir/modules/clients/views/create_client.screen.dart';
+import 'package:cashir/modules/clients/views/edit_client.screen.dart';
 import 'package:cashir/modules/dashboard/view/dashboard.screen.dart';
 import 'package:cashir/modules/employees/views/employees.screen.dart';
 import 'package:cashir/modules/orders/views/orders.screen.dart';
@@ -13,6 +15,7 @@ import 'package:get/get.dart';
 
 import '../modules/auth/view/login/login.screen.dart';
 import '../modules/auth/view/register/register.screen.dart';
+import '../modules/clients/views/clients.screen.dart';
 import '../modules/products/views/edit_product.screen.dart';
 
 const DEFAULT_ROUTE = '/';
@@ -52,6 +55,20 @@ List<GetPage> appRoutes = [
   GetPage(
     name: '/admin/products/:id/edit',
     page: () => EditProductScreen(),
+  ),
+
+  // clients routes
+  GetPage(
+    name: '/admin/clients',
+    page: () => const ClientsScreen(),
+  ),
+  GetPage(
+    name: '/admin/clients/create',
+    page: () => CreateClientScreen(),
+  ),
+  GetPage(
+    name: '/admin/clients/:id/edit',
+    page: () => EditClientScreen(),
   ),
 
   GetPage(
