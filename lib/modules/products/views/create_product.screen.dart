@@ -72,7 +72,7 @@ class CreateProductScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: createProduct,
-                  child: const Text("Create"),
+                  child: Text("Create".tr),
                 ),
               ),
             ],
