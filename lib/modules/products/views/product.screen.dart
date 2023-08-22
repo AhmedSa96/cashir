@@ -13,6 +13,7 @@ class ProductsScreen extends StatelessWidget {
       title: "Products".tr,
       floatingActionButton: FloatingActionButton(
         backgroundColor: colors.primary,
+        foregroundColor: Colors.white,
         child: const Icon(Icons.add),
         onPressed: () {
           Get.toNamed('/admin/products/create');

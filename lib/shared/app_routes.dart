@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 
 import '../modules/auth/view/login/login.screen.dart';
 import '../modules/auth/view/register/register.screen.dart';
+import '../modules/products/views/edit_product.screen.dart';
 
 const DEFAULT_ROUTE = '/';
 
@@ -46,7 +47,11 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: '/admin/products/create',
-    page: () => const CreateProductScreen(),
+    page: () => CreateProductScreen(),
+  ),
+  GetPage(
+    name: '/admin/products/:id/edit',
+    page: () => EditProductScreen(),
   ),
 
   GetPage(
