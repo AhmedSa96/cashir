@@ -23,8 +23,9 @@ class CreateProductScreen extends StatelessWidget {
       validators: [Validators.required, Validators.number],
     ),
     "category_id": FormControl<String>(validators: [Validators.required]),
-    // todo: make it file input or image picker, not text input
+    // TODO: make it file input or image picker, not text input
     "image": FormControl<String>(validators: [Validators.required]),
+    // TODO: add barcode input
   });
 
   CreateProductScreen({super.key});

@@ -29,7 +29,7 @@ class EditProductScreen extends StatelessWidget {
 
   EditProductScreen({super.key});
 
-  void createProduct() {
+  void editProduct() {
     if (form.invalid) {
       form.markAllAsTouched();
       return;
@@ -71,7 +71,7 @@ class EditProductScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: createProduct,
+                  onPressed: editProduct,
                   child: Text("Save".tr),
                 ),
               ),
