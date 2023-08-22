@@ -23,10 +23,10 @@ mixin _$Product {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  double get price =>
-      throw _privateConstructorUsedError; // required String image,
-  int get quantity =>
-      throw _privateConstructorUsedError; // required String category,
+  double get price => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+  String get category => throw _privateConstructorUsedError;
   String get barcode => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
@@ -46,7 +46,9 @@ abstract class $ProductCopyWith<$Res> {
       String name,
       String description,
       double price,
+      String image,
       int quantity,
+      String category,
       String barcode,
       String createdAt,
       String updatedAt});
@@ -69,7 +71,9 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? name = null,
     Object? description = null,
     Object? price = null,
+    Object? image = null,
     Object? quantity = null,
+    Object? category = null,
     Object? barcode = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -91,10 +95,18 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
       barcode: null == barcode
           ? _value.barcode
           : barcode // ignore: cast_nullable_to_non_nullable
@@ -123,7 +135,9 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String name,
       String description,
       double price,
+      String image,
       int quantity,
+      String category,
       String barcode,
       String createdAt,
       String updatedAt});
@@ -143,7 +157,9 @@ class __$$_ProductCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? price = null,
+    Object? image = null,
     Object? quantity = null,
+    Object? category = null,
     Object? barcode = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -165,10 +181,18 @@ class __$$_ProductCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
       barcode: null == barcode
           ? _value.barcode
           : barcode // ignore: cast_nullable_to_non_nullable
@@ -193,7 +217,9 @@ class _$_Product implements _Product {
       required this.name,
       required this.description,
       required this.price,
+      required this.image,
       required this.quantity,
+      required this.category,
       required this.barcode,
       required this.createdAt,
       required this.updatedAt});
@@ -209,10 +235,12 @@ class _$_Product implements _Product {
   final String description;
   @override
   final double price;
-// required String image,
+  @override
+  final String image;
   @override
   final int quantity;
-// required String category,
+  @override
+  final String category;
   @override
   final String barcode;
   @override
@@ -222,7 +250,7 @@ class _$_Product implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, name: $name, description: $description, price: $price, quantity: $quantity, barcode: $barcode, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Product(id: $id, name: $name, description: $description, price: $price, image: $image, quantity: $quantity, category: $category, barcode: $barcode, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -235,8 +263,11 @@ class _$_Product implements _Product {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.barcode, barcode) || other.barcode == barcode) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -247,7 +278,7 @@ class _$_Product implements _Product {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description, price,
-      quantity, barcode, createdAt, updatedAt);
+      image, quantity, category, barcode, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -269,7 +300,9 @@ abstract class _Product implements Product {
       required final String name,
       required final String description,
       required final double price,
+      required final String image,
       required final int quantity,
+      required final String category,
       required final String barcode,
       required final String createdAt,
       required final String updatedAt}) = _$_Product;
@@ -284,9 +317,13 @@ abstract class _Product implements Product {
   String get description;
   @override
   double get price;
-  @override // required String image,
+  @override
+  String get image;
+  @override
   int get quantity;
-  @override // required String category,
+  @override
+  String get category;
+  @override
   String get barcode;
   @override
   String get createdAt;
