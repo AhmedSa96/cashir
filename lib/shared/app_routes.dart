@@ -10,6 +10,9 @@ import 'package:cashir/modules/products/views/product.screen.dart';
 import 'package:cashir/modules/purcheses/views/purcheses.screen.dart';
 import 'package:cashir/modules/reports/views/reports.screen.dart';
 import 'package:cashir/modules/splash/view/splash.screen.dart';
+import 'package:cashir/modules/suppliers/views/create_supplier.screen.dart';
+import 'package:cashir/modules/suppliers/views/edit_supplier.screen.dart';
+import 'package:cashir/modules/suppliers/views/suppliers.screen.dart';
 import 'package:cashir/modules/system_constatnts/views/system_constants.screen.dart';
 import 'package:get/get.dart';
 
@@ -69,6 +72,20 @@ List<GetPage> appRoutes = [
   GetPage(
     name: '/admin/clients/:id/edit',
     page: () => EditClientScreen(),
+  ),
+
+  // suppliers routes
+  GetPage(
+    name: '/admin/suppliers',
+    page: () => const SuppliersScreen(),
+  ),
+  GetPage(
+    name: '/admin/suppliers/create',
+    page: () => CreateSupplierScreen(),
+  ),
+  GetPage(
+    name: '/admin/suppliers/:id/edit',
+    page: () => EditSupplierScreen(),
   ),
 
   GetPage(
