@@ -28,6 +28,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select a photo for product or profile</string>
+	<key>NSCameraUsageDescription</key>
+	<string>take a photo for product or profile</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Select a photo for product or profile</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

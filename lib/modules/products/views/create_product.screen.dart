@@ -1,4 +1,7 @@
+import 'dart:typed_data';
+
 import 'package:cashir/shared/widgets/common/wrapper.widget.dart';
+import 'package:cashir/shared/widgets/forms/file_input.widget.dart';
 import 'package:cashir/shared/widgets/forms/text_input.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cashir/shared/layouts/admin.layout.dart';
@@ -24,7 +27,7 @@ class CreateProductScreen extends StatelessWidget {
     ),
     "category_id": FormControl<String>(validators: [Validators.required]),
     // TODO: make it file input or image picker, not text input
-    "image": FormControl<String>(validators: [Validators.required]),
+    "image": FormControl<List<Uint8List>>(validators: [Validators.required]),
     // TODO: add barcode input
   });
 
@@ -67,7 +70,11 @@ class CreateProductScreen extends StatelessWidget {
               const SizedBox(height: 20),
               TextInput(title: "category".tr, formControlName: "category_id"),
               const SizedBox(height: 20),
-              TextInput(title: "image".tr, formControlName: "image"),
+              const FileInput(
+                label: "image",
+                formControlName: "image",
+                isMultiple: true,
+              ),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
