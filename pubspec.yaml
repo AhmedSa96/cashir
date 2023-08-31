@@ -37,6 +37,7 @@ dependencies:
   http: ^1.1.0
   image_picker: ^1.0.4
   json_annotation: ^4.8.1
+  mobile_scanner: ^3.4.1
   reactive_forms: ^16.0.3
   wave: ^0.2.2
 

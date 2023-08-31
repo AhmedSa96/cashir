@@ -1,4 +1,6 @@
 import 'package:cashir/shared/widgets/common/wrapper.widget.dart';
+import 'package:cashir/shared/widgets/forms/barcode_input.widget.dart';
+import 'package:cashir/shared/widgets/forms/file_input.widget.dart';
 import 'package:cashir/shared/widgets/forms/text_input.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cashir/shared/layouts/admin.layout.dart';
@@ -23,8 +25,8 @@ class EditProductScreen extends StatelessWidget {
       validators: [Validators.required, Validators.number],
     ),
     "category_id": FormControl<String>(validators: [Validators.required]),
-    // todo: make it file input or image picker, not text input
     "image": FormControl<String>(validators: [Validators.required]),
+    "barcode": FormControl<String>(),
   });
 
   EditProductScreen({super.key});
@@ -66,8 +68,9 @@ class EditProductScreen extends StatelessWidget {
               const SizedBox(height: 20),
               TextInput(title: "category".tr, formControlName: "category_id"),
               const SizedBox(height: 20),
-              TextInput(title: "image".tr, formControlName: "image"),
+              FileInput(label: "image".tr, formControlName: "image"),
               const SizedBox(height: 20),
+              BarcodeInput(title: "bar code".tr, formControlName: "barcode"),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
