@@ -57,10 +57,11 @@ class _SplashScreenState extends State<SplashScreen> {
               duration: const Duration(seconds: 1),
               curve: Curves.easeInOut,
               opacity: _visible.value ? 1 : 0,
-              child: const Center(
-                child: Text(
-                  'LOGO',
-                  style: TextStyle(fontSize: 64),
+              child: Center(
+                child: Image.asset(
+                  "assets/images/logo_white.png",
+                  height: 200,
+                  width: 200,
                 ),
               ),
             ),

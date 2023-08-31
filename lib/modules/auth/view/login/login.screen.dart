@@ -65,11 +65,12 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Wrapper(
+              Wrapper(
                 child: Center(
-                  child: Text(
-                    "LOGO",
-                    style: TextStyle(fontSize: 32),
+                  child: Image.asset(
+                    "assets/images/logo.png",
+                    height: 200,
+                    width: 200,
                   ),
                 ),
               ),

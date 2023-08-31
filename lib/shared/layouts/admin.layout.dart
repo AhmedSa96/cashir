@@ -44,7 +44,10 @@ class _MainMenu extends StatelessWidget {
             child: Container(
               color: colors.primary,
               alignment: Alignment.center,
-              child: const Text("CAHSIR"),
+              child: Image.asset(
+                "assets/images/logo_white.png",
+                // width: 100,
+              ),
             ),
           ),
           ListTile(

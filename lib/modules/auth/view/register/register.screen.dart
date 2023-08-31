@@ -80,11 +80,12 @@ class RegisterScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Wrapper(
+                  Wrapper(
                     child: Center(
-                      child: Text(
-                        "LOGO",
-                        style: TextStyle(fontSize: 32),
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        height: 200,
+                        width: 200,
                       ),
                     ),
                   ),
@@ -148,7 +149,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.offNamed('/admin/dashboard');
+                      Get.offNamed('/login');
                     },
                     child: Text("if you already have an account, login".tr),
                   ),
