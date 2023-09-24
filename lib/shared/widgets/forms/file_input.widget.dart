@@ -6,6 +6,7 @@ import 'package:cashir/shared/constants/colors.dart' as colors;
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+import 'package:zoom_pinch_overlay/zoom_pinch_overlay.dart';
 
 class FileInput extends StatefulWidget {
   final String formControlName;
@@ -118,15 +119,17 @@ class _FileInputState extends State<FileInput> {
                                     control,
                                     control.value!.indexOf(e),
                                   ),
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.grey.shade100,
-                                      image: DecorationImage(
-                                        image: MemoryImage(e),
-                                        fit: BoxFit.cover,
+                                  child: ZoomOverlay(
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.grey.shade100,
+                                        image: DecorationImage(
+                                          image: MemoryImage(e),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
