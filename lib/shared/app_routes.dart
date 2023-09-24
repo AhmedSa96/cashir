@@ -4,7 +4,7 @@ import 'package:cashir/modules/clients/views/create_client.screen.dart';
 import 'package:cashir/modules/clients/views/edit_client.screen.dart';
 import 'package:cashir/modules/dashboard/view/dashboard.screen.dart';
 import 'package:cashir/modules/employees/views/employees.screen.dart';
-import 'package:cashir/modules/orders/views/orders.screen.dart';
+import 'package:cashir/modules/sales/views/sales.screen.dart';
 import 'package:cashir/modules/products/views/create_product.screen.dart';
 import 'package:cashir/modules/products/views/product.screen.dart';
 import 'package:cashir/modules/purcheses/views/purcheses.screen.dart';
@@ -89,8 +89,8 @@ List<GetPage> appRoutes = [
   ),
 
   GetPage(
-    name: '/admin/orders',
-    page: () => const OrdersScreen(),
+    name: '/admin/sales',
+    page: () => const SalesScreen(),
   ),
   GetPage(
     name: '/admin/purcheses',

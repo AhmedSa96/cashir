@@ -79,10 +79,10 @@ class _MainMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Orders".tr),
+            title: Text("Sales".tr),
             leading: const Icon(Icons.shopping_cart, color: colors.primary),
             onTap: () {
-              Get.toNamed('/admin/orders');
+              Get.toNamed('/admin/sales');
             },
           ),
           ListTile(
