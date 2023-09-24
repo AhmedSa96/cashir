@@ -14,8 +14,8 @@ class Product with _$Product {
     required int quantity,
     required String category,
     required String barcode,
-    required String createdAt,
-    required String updatedAt,
+    required DateTime createdAt,
+    required DateTime updatedAt,
   }) = _Product;
 
   factory Product.fromJson(Map<String, dynamic> json) =>

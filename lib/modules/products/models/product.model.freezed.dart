@@ -28,8 +28,8 @@ mixin _$Product {
   int get quantity => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get barcode => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
-  String get updatedAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,8 +50,8 @@ abstract class $ProductCopyWith<$Res> {
       int quantity,
       String category,
       String barcode,
-      String createdAt,
-      String updatedAt});
+      DateTime createdAt,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -114,11 +114,11 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -139,8 +139,8 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       int quantity,
       String category,
       String barcode,
-      String createdAt,
-      String updatedAt});
+      DateTime createdAt,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -200,11 +200,11 @@ class __$$_ProductCopyWithImpl<$Res>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -244,9 +244,9 @@ class _$_Product implements _Product {
   @override
   final String barcode;
   @override
-  final String createdAt;
+  final DateTime createdAt;
   @override
-  final String updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString() {
@@ -304,8 +304,8 @@ abstract class _Product implements Product {
       required final int quantity,
       required final String category,
       required final String barcode,
-      required final String createdAt,
-      required final String updatedAt}) = _$_Product;
+      required final DateTime createdAt,
+      required final DateTime updatedAt}) = _$_Product;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 
@@ -326,9 +326,9 @@ abstract class _Product implements Product {
   @override
   String get barcode;
   @override
-  String get createdAt;
+  DateTime get createdAt;
   @override
-  String get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

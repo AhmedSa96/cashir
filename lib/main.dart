@@ -12,7 +12,9 @@ void setupGet() {
   setupDI();
 }
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // setup get package
   setupGet();
 
